@@ -54,15 +54,17 @@ public class Category implements Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	
+	public Set<Product> getProducts() {
+		return products;
+	}
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
 	}
 	
-	public Set<Product> getProducts() {
-		return products;
-	}
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -75,6 +77,8 @@ public class Category implements Serializable{
 		Category other = (Category) obj;
 		return Objects.equals(id, other.id);
 	}
+
+	
 
 	
 	
