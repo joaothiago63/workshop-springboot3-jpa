@@ -3,6 +3,7 @@ package com.joao_roberto.course.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.joao_roberto.course.entities.pk.OrderItemPK;
 
 import jakarta.persistence.EmbeddedId;
@@ -34,6 +35,8 @@ public class OrderItem implements Serializable{
 	}
 	
 	
+	
+	@JsonIgnore
 	public Order getOrder() {
 		return id.getOrder();
 	}
@@ -41,6 +44,8 @@ public class OrderItem implements Serializable{
 	public void setOrder(Order order) {
 	  id.setOrder(order);
 	}
+	
+	
 	public Product getProduct() {
 		return id.getProduct();
 	}
